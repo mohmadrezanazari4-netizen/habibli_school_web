@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسه شهید عبدالرحمن حبیب لی </title>
+
+    <style>
+        body {
+            font-family: 'Vazir';
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #2c3e50;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin: 0 0 5px 0;
+            font-size: 2.2em;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6.5px 14px;
+            border-radius: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #2980b9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 25px auto;
+        }
+
+        section {
+            padding: 25px;
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border-right: 8px solid;
+            transition: border-color 0.5s;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.6em;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        ul,
+        li {
+            line-height: 1.8;
+        }
+
+        #about {
+            border-color: #2ecc71;
+        }
+
+
+        #teachers {
+            border-color: #f39c12;
+        }
+
+
+        #news {
+            border-color: #964faa;
+        }
+
+
+        #contact {
+            border-color: #354b60;
+        }
+
+
+        #honors {
+            border-color: #e74c3c;
+            /*  افتخارات */
+            background-color: #fdedec;
+        }
+
+        #top-performers {
+            border-color: #f1c40f;
+            /* برترین‌ها */
+            background-color: #fff8e1;
+        }
+
+        /* شمارنده‌ */
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 30px 0;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .stat-box {
+            flex-basis: 48%;
+        }
+
+        .stat-number {
+            font-size: 3.5em;
+            font-weight: 900;
+            color: #e74c3c;
+            display: block;
+            transition: color 0.5s;
+        }
+
+        .stat-label {
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+
+        .top-performers-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff8e1;
+        }
+
+        .performer-placeholder {
+            display: inline-block;
+            margin: 15px;
+            padding: 20px;
+            border: 3px solid #f39c12;
+            width: 160px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .performer-placeholder img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: #bdc3c7;
+            display: block;
+            margin: 0 auto 10px;
+            border: 2px solid #f1c40f;
+        }
+
+        .performer-placeholder p {
+            margin: 0;
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        #contact p {
+            background-color: #ecf0f1;
+            border-left: 10px solid #2072a9;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>مدرسه شهید عبدالرحمن حبیب‌لی</h1>
+        <p>مرکز آموزش، تربیت و آینده‌سازی</p>
+        <nav>
+            <a href="#about">درباره مدرسه</a>
+            <a href="#teachers">کادر آموزشی</a>
+            <a href="#news">اخبار</a>
+            <a href="#honors">افتخارات</a>
+            <a href="#top-performers">نفرات برتر ماه</a>
+            <a href="#contact">تماس</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section id="about">
+            <h2>درباره مدرسه</h2>
+            <p>مدرسه شهید عبدالرحمن حبیب‌لی با هدف ارتقای سطح علمی، فرهنگی و اخلاقی دانش‌آموزان فعالیت می‌کند.</p>
+        </section>
+
+        <section id="teachers">
+            <h2>کادر آموزشی</h2>
+            <ul>
+                <li>اقای علی زمانی – مدیر</li>
+                <li>خانم حسینی – دبیر ریاضی</li>
+                <li>آقای محمدی – دبیر علوم</li>
+            </ul>
+        </section>
+
+        <section id="stats">
+            <h2>آمار کلیدی</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-number" id="teacher-count">0</span>
+                    <span class="stat-label">تعداد معلمان</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" id="student-count">0</span>
+                    <span class="stat-label">تعداد کل دانش‌آموزان</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>اخبار مدرسه</h2>
+            <p>در حال بارگذاری اخبار...</p>
+            <p><a href="#" style="color: #9b59b6; text-decoration: underline;">نمایش خبر امروز</a></p>
+        </section>
+
+
+        <section id="top-performers">
+            <h2>نفرات برتر ماه</h2>
+            <div class="top-performers-section">
+                <p>این بخش به زودی با عکس‌ها و اسامی منتخبین ماه به‌روزرسانی خواهد شد.</p>
+                <div class="performer-placeholder">
+                    <img src="https://via.placeholder.com/90/bdc3c7/ffffff?text=1" alt="نفر اول">
+                    <p>نام دانش‌آموز1</p>
+                </div>
+                <div class="performer-placeholder">
+                    <img src="https://via.placeholder.com/90/bdc3c7/ffffff?text=2" alt="نفر دوم">
+                    <p>نام دانش‌آموز2</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="honors">
+            <h2>افتخارات مدرسه</h2>
+            <p>این قسمت برای ثبت بزرگترین دستاوردهای مدرسه در طول سال در نظر گرفته شده است.</p>
+            <ul>
+                <li>افتخار شماره ۱</li>
+                <li>افتخار شماره ۲</li>
+            </ul>
+        </section>
+
+
+        <section id="contact">
+            <h2>تماس با ما</h2>
+            <p>📞 تلفن: 017123456789</p>
+            <p>نشانی : آق قلا ـ محله زمین شهری</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <div style="text-align: center; padding: 15px; background-color: #2c3e50; color: #ecf0f1; font-size: 0.9em;">
+            © 2025 مدرسه شهید عبدالرحمن حبیب‌لی. کلیه حقوق برای این مرکز محفوظ است.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const teacherCountElement = document.getElementById('teacher-count');
+            const studentCountElement = document.getElementById('student-count');
+
+            const finalTeacherCount = 25;
+            const finalStudentCount = 450;
+            const duration = 2000;
+
+            function countTo(element, endValue) {
+                let start = 0;
+                let startTime = null;
+
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = timestamp - startTime;
+                    const percentage = Math.min(progress / duration, 1);
+
+
+                    const easedProgress = 0.5 - Math.cos(percentage * Math.PI) / 2;
+
+
+                    element.textContent = Math.floor(easedProgress * endValue);
+
+                    if (percentage < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        element.textContent = endValue;
+                    }
+                }
+                window.requestAnimationFrame(step);
+            }
+
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        countTo(teacherCountElement, finalTeacherCount);
+                        countTo(studentCountElement, finalStudentCount);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+
+            observer.observe(document.getElementById('stats'));
+        });
+    </script>
+
+</body>
+
+</html>
