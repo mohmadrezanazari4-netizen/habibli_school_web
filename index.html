@@ -11,7 +11,11 @@
     <style>
         @font-face {
             font-family: 'nazari';
-            src: url('camint/fonts/Vazir-Medium.woff');
+            src: url('camint/fonts/Vazir-Regular.woff');
+        }
+
+        :root {
+            --color-accent-1: #37ac9a;
         }
 
         body {
@@ -180,6 +184,31 @@
             border-radius: 5px;
             font-weight: bold;
         }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            nav {
+                margin-top: 15px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 5px 8px;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
     </style>
 </head>
 
@@ -271,7 +300,7 @@
 
     <footer>
         <div style="text-align: center; padding: 15px; background-color: #2c3e50; color: #ecf0f1; font-size: 0.9em;">
-            © 2026 مدرسه شهید عبدالرحمن حبیب‌لی.
+            © 2026 مدرسه شهید عبدالرحمن حبیب‌لی
         </div>
     </footer>
 
