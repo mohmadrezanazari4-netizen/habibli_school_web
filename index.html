@@ -341,7 +341,6 @@
 </div>
 <button class="showMoreBtn" data-grade="7">نمایش بیشتر نفرات پایه هفتم</button>
 
-<!-- پایه هشتم -->
 <h3>پایه هشتم</h3>
 <div class="students-container">
   
@@ -361,7 +360,7 @@
     <span>نفر سوم</span>
   </div>
   
-  <!-- باقی نفرات (بدون عکس و پنهان) -->
+  
   <div class="student-card hidden-details">
     <p>امیرحافظ توسلی (هشتم)</p>
   </div>
@@ -387,7 +386,6 @@
 </div>
 <button class="showMoreBtn" data-grade="8">نمایش بیشتر نفرات پایه هشتم</button>
 
-<!-- پایه نهم -->
 <h3>پایه نهم</h3>
 <div class="students-container">
   
@@ -407,7 +405,7 @@
     <span>نفر سوم</span>
   </div>
   
-  <!-- باقی نفرات (بدون عکس و پنهان) -->
+
   <div class="student-card hidden-details">
     <p>طاها آل هوز (نهم)</p>
   </div>
@@ -434,7 +432,6 @@
 <button class="showMoreBtn" data-grade="9">نمایش بیشتر نفرات پایه نهم</button>
 
 <style>
-/* استایل‌هایی که شبیه به طرح قبلی سایت شما هستند */
 .students-container {
   display: flex;
   flex-wrap: wrap;
@@ -442,25 +439,24 @@
   margin-bottom: 20px;
   padding: 2%;
   border-radius: 4%;
-  /* فرض بر این است که این رنگ، همان طرح طلایی/جذاب مورد نظر شماست */
-  background-color: #eae3dd; /* یک پس‌زمینه خنثی و روشن برای شبیه‌سازی محفظه */
+  background-color: #eae3dd; 
 }
 
 .student-card {
   text-align: center;
-  background-color: #ffffff; /* پس‌زمینه خود کارت سفید برای خوانایی */
+  background-color: #ffffff;
   border-radius: 8px;
   padding: 14px;
-  min-width: 120px; /* حداقل عرض برای سه نفر اول */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* سایه برای برجسته شدن */
+  min-width: 120px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .student-card img {
-  width: 90px; /* اندازه مورد نظر شما */
-  height: 90px;
+  width: 105px; 
+  height: 115px;
   border-radius: 6px;
   margin-bottom: 5px;
 }
@@ -477,14 +473,13 @@
     color: #7f8c8d;
 }
 
-/* استایل برای نفراتی که پنهان هستند */
 .hidden-details {
-  display: none; /* پنهان کردن پیش‌فرض */
+  display: none; 
   background-color: transparent;
   box-shadow: none;
   padding: 0;
   border: none;
-  width: 170px; /* برای اینکه فضای خالی ایجاد شود و متن واضح باشد */
+  width: 170px; 
 }
 
 .hidden-details p {
@@ -503,7 +498,7 @@
   margin: 15px auto;
   padding: 8px 17px;
   font-size: 20px;
-  background-color: #2c3e50; /* رنگ تیره مشابه هدر */
+  background-color: #2c3e50;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -524,11 +519,11 @@ document.querySelectorAll(".showMoreBtn").forEach(btn => {
     
     // نمایش جزئیات پنهان شده
     container.querySelectorAll(".hidden-details").forEach(el => {
-        el.style.display = "flex"; // نمایش به صورت فلکس برای حفظ لایه‌بندی
+        el.style.display = "flex";
         el.style.flexDirection = "column";
     });
     
-    // پنهان کردن دکمه پس از کلیک
+  
     this.style.display = "none";
   });
 });
@@ -537,7 +532,6 @@ document.querySelectorAll(".showMoreBtn").forEach(btn => {
 
         <section id="honors">
             <h2>افتخارات مدرسه</h2>
-            <p>این قسمت برای ثبت بزرگترین دستاوردهای مدرسه در طول سال در نظر گرفته شده است.</p>
             <ul>
                 <li>افتخار شماره ۱</li>
                 <li>افتخار شماره ۲</li>
