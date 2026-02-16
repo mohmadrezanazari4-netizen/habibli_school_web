@@ -512,9 +512,8 @@
 document.querySelectorAll(".showMoreBtn").forEach(btn => {
   btn.addEventListener("click", function() {
     const grade = this.dataset.grade;
-    const container = this.previousElementSibling; // .students-container
+    const container = this.previousElementSibling;
     
-    // نمایش جزئیات پنهان شده
     container.querySelectorAll(".hidden-details").forEach(el => {
         el.style.display = "flex";
         el.style.flexDirection = "column";
@@ -550,55 +549,52 @@ document.querySelectorAll(".showMoreBtn").forEach(btn => {
             © 2026 مدرسه شهید عبدالرحمن حبیب‌لی
         </div>
     </footer>
-
     <script>
-        document.addEventlistener('DOMContentLoaded', function () {
-            const teacherCountElement = document.getElementById('teacher-count');
-            const studentCountElement = document.getElementById('student-count');
 
-            const finalTeacherCount = 47;
-            const finalStudentCount = 453;
-            const duration = 2000;
+      document.addEventListener('DOMContentLoaded', function () {
+              const teacherCountElement = document.getElementById('teacher-count');
+              const studentCountElement = document.getElementById('student-count');
 
-            function countTo(element, endValue) {
-                let start = 0;
-                let startTime = null;
+              const finalTeacherCount = 25;
+              const finalStudentCount = 450;
+              const duration = 2000;
 
-                function step(timestamp) {
-                    if (!startTime) startTime = timestamp;
-                    const progress = timestamp - startTime;
-                    const percentage = Math.min(progress / duration, 1);
+              function countTo(element, endValue) {
+                  let start = 0;
+                  let startTime = null;
 
+                  function step(timestamp) {
+                      if (!startTime) startTime = timestamp;
+                      const progress = timestamp - startTime;
+                      const percentage = Math.min(progress / duration, 1);
 
-                    const easedProgress = 0.5 - Math.cos(percentage * Math.PI) / 2;
+                      const easedProgress = 0.5 - Math.cos(percentage * Math.PI) / 2;
 
+                      element.textContent = Math.floor(easedProgress * endValue);
 
-                    element.textContent = Math.floor(easedProgress * endValue);
+                      if (percentage < 1) {
+                          window.requestAnimationFrame(step);
+                      } else {
+                          element.textContent = endValue;
+                      }
+                  }
+                  window.requestAnimationFrame(step);
+              }
 
-                    if (percentage < 1) {
-                        window.requestAnimationFrame(step);
-                    } else {
-                        element.textContent = endValue;
-                    }
-                }
-                window.requestAnimationFrame(step);
-            }
+              const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                      if (entry.isIntersecting) {
+                          countTo(teacherCountElement, finalTeacherCount);
+                          countTo(studentCountElement, finalStudentCount);
+                          observer.unobserve(entry.target);
+                      }
+                  });
+              }, { threshold: 0.5 });
 
+              observer.observe(document.getElementById('stats'));
+          });
+      </script>
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        countTo(teacherCountElement, finalTeacherCount);
-                        countTo(studentCountElement, finalStudentCount);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-
-            observer.observe(document.getElementById('stats'));
-        });
-    </script>
 
 </body>
 
