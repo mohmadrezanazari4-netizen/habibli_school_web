@@ -35,6 +35,123 @@
     font-family: "nazari", "Vazir", Tahoma, sans-serif !important;
     font-size: 15px !important; 
 }
+        .news-wrapper {
+    max-width: 100%;
+    margin: 20px auto 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.news-slider {
+    display: flex;
+    gap: 16px;
+    padding: 16px 20px;
+    animation: slide 30s linear infinite;
+    animation-delay: -22.5s;           
+    will-change: transform;
+}
+
+.news-slider:hover {
+    animation-play-state: paused;
+}
+
+.news-item {
+    flex: 0 0 320px;
+    height: 200px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    transition: all 0.35s ease;
+    position: relative;
+}
+
+.news-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+}
+
+.news-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.65));
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    z-index: 1;
+}
+
+.news-item:hover::before {
+    opacity: 1;
+}
+
+.news-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s ease;
+}
+
+.news-item:hover img {
+    transform: scale(1.08);
+}
+
+.news-info {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 16px 14px 20px;
+    color: white;
+    transform: translateY(55%);
+    opacity: 0;
+    transition: all 0.40s ease;
+    z-index: 2;
+}
+
+.news-item:hover .news-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.news-info h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.news-info p {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    opacity: 0.94;
+}
+
+@keyframes slide {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* موبایل */
+@media (max-width: 576px) {
+    .news-slider {
+        gap: 12px;
+        padding: 12px 16px;
+        animation-duration: 20s;
+        animation-delay: -19s;
+    }
+    .news-item {
+        flex: 0 0 calc(100% - 24px);
+        height: 158px;
+    }
+    .news-info {
+        padding: 14px 12px 18px;
+    }
+    .news-info h3 { font-size: 1.02rem; }
+    .news-info p   { font-size: 0.82rem; }
+}
+
+        
 
         .top-performers-section {
             text-align: center;
@@ -240,6 +357,8 @@
                 font-size: 1.5em;
             }
         }
+        
+        
     </style>
 </head>
 
@@ -289,8 +408,42 @@
         </section>
 
         <section id="news">
-            <h2>اخبار مدرسه</h2>
-        </section>
+    <h2>اخبار مدرسه</h2>
+
+
+
+    <div class="news-wrapper">
+      <div class="news-slider" id="newsSlider">
+
+        
+        <div class="news-item">
+          <img src="camint/images/خبر کتابخانه.jpg" alt="خبر 1">
+          <div class="news-info">
+            <h3>افتتاح کتابخانه جدید مدرسه</h3>
+            <p>فضایی مدرن برای تقویت فرهنگ مطالعه دانش‌آموزان راه‌اندازی شد.</p>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <img src="camint/images/خبر والیبال.jpg" alt="خبر 2">
+          <div class="news-info">
+            <h3>قهرمانی تیم والیبال مدارس</h3>
+            <p>تیم مدرسه شهید حبیب‌لی مقام اول مسابقات شهرستان را کسب کرد.</p>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <img src="camint/images/ختم قران.jpg" alt="خبر 3">
+          <div class="news-info">
+            <h3>جشن ختم قرآن کریم</h3>
+            <p>دانش‌آموزان پایه هشتم در مراسمی معنوی شرکت کردند.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+</section>
 
 
         <section id="top-performers">
@@ -596,6 +749,30 @@ document.querySelectorAll(".showMoreBtn").forEach(btn => {
 
               observer.observe(document.getElementById('stats'));
           });
+          function duplicateNewsItems() {
+        const slider = document.getElementById('newsSlider');
+        if (!slider) {
+            console.warn("اسلایدر پیدا نشد");
+            return;
+        }
+
+        const originals = Array.from(slider.children);
+        if (originals.length === 0) return;
+
+        const multiplier = window.innerWidth < 576 ? 5 : 3;
+        const targetCount = originals.length * multiplier + 2;
+
+        while (slider.children.length < targetCount) {
+            originals.forEach(item => {
+                slider.appendChild(item.cloneNode(true));
+            });
+        }
+
+        console.log("تعداد آیتم‌های کلون شده:", slider.children.length);
+    }
+
+    window.addEventListener('load', duplicateNewsItems);
+    window.addEventListener('resize', duplicateNewsItems);
       </script>
 
 
